@@ -108,3 +108,32 @@ AOS.init({
     once: true,     // La animación solo ocurre una vez
 });
 
+/*=============== FAQ ACCORDION ===============*/
+const faqItems = document.querySelectorAll('.faq__item');
+
+faqItems.forEach((item) => {
+    const header = item.querySelector('.faq__header');
+    header.addEventListener('click', () => {
+        const openItem = document.querySelector('.faq__item.open');
+
+        // Toggle (abrir/cerrar) el item actual
+        toggleItem(item);
+
+        // Si había otro item abierto, cerrarlo
+        if (openItem && openItem !== item) {
+            toggleItem(openItem);
+        }
+    });
+});
+
+const toggleItem = (item) => {
+    const content = item.querySelector('.faq__content');
+    
+    if (item.classList.contains('open')) {
+        content.style.maxHeight = 0;
+        item.classList.remove('open');
+    } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        item.classList.add('open');
+    }
+};

@@ -479,3 +479,92 @@ img { max-width: 100%; height: auto; }
 .whatsapp-float:hover {
     transform: scale(1.1); /* Efecto de crecimiento al pasar el ratón */
 }
+
+
+/*=============== PRICING GUIDE ===============*/
+.pricing-guide {
+    background-color: var(--color-gray);
+}
+.pricing-guide__container {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+.price-card {
+    background-color: var(--color-light);
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform .3s, box-shadow .3s;
+}
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.price-card__img {
+    height: 80px;
+    margin-bottom: var(--mb-1-5);
+}
+.price-card__size {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-75);
+}
+.price-card__price {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--mb-1-5);
+}
+.button--sm {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--small-font-size);
+}
+
+/*=============== FAQ ACCORDION ===============*/
+.faq__container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.faq__item {
+    background-color: var(--color-light);
+    border: 1px solid #ddd;
+    border-radius: .5rem;
+    padding: 1rem 1.5rem;
+    transition: box-shadow .3s;
+}
+.faq__item.open {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.faq__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+.faq__icon {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    transition: transform .4s;
+}
+.faq__item.open .faq__icon {
+    transform: rotate(45deg);
+}
+.faq__item-title {
+    font-size: 1.1rem;
+    font-family: var(--body-font);
+    font-weight: var(--font-semi-bold);
+}
+.faq__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-out;
+}
+.faq__content p {
+    padding: 1rem 0 0.5rem 2.5rem;
+    line-height: 1.7;
+}
