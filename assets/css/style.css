@@ -503,7 +503,7 @@ img { max-width: 100%; height: auto; }
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 .price-card__img {
-    height: 80px;
+    height: 150px;
     margin-bottom: var(--mb-1-5);
 }
 .price-card__size {
